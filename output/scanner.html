@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>scanner</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v6">
+<meta name="syntax" content="ruby">
+<meta name="settings" content="use_css">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #000000; background-color: #ffffff;font-size: 22pt; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+.Statement { color: #008080; font-weight: bold; }
+.Identifier { color: #804000;  }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="Identifier">@scanner</span>.skip(<span class="Identifier">@skip</span>)
+<span class="Statement">until</span> <span class="Identifier">@scanner</span>.eos? <span class="Statement">do</span>
+    <span class="Identifier">@@tokens</span>.each <span class="Statement">do</span> |<span class="Identifier">regex</span>,<span class="Identifier">token</span>|
+        tmp = <span class="Identifier">@scanner</span>.check(regex)
+        <span class="Statement">next</span> <span class="Statement">if</span> tmp.nil?
+        <span class="Statement">if</span> tmp.length &gt; value.length
+            value = tmp
+            stoken = token
+        <span class="Statement">else</span>
+            <span class="Statement">next</span>
+        <span class="Statement">end</span>
+        <span class="Statement">yield</span> [stoken, value]
+    <span class="Statement">end</span>
+<span class="Statement">end</span>
+</pre>
+</body>
+</html>
