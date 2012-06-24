@@ -19,7 +19,7 @@ Puppet::Type.newtype(:repo) do
     desc "Destination path"
     validate do |value|
       unless value =~ /^\/[a-z0-9]+/
-        raise ArgumentError , "%s is not a valid file path" % value
+        raise ArgumentError , "#{value} is not a valid file path"
       end
     end
   end
