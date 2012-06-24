@@ -1,3 +1,3 @@
-exec { "svn co http://core.svn.wordpress.org/trunk/ /var/www/wp":
-    creates => "/var/www/wp",
+exec { "/usr/bin/svn co http://core.svn.wordpress.org/trunk/ /tmp/wp":
+    creates => "/tmp/wp",
 }

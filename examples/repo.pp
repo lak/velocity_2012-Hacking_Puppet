@@ -1,5 +1,5 @@
 repo { "wp":
     source => "http://core.svn.wordpress.org/trunk/",
-    path => "/var/www/wp",
+    path => "/tmp/wp",
     ensure => present,
 }
